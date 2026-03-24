@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree.woff2") format("woff2");
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Saffron/Gold temple palette */
+    --background: 0.97 0.018 75;
+    --foreground: 0.22 0.04 45;
+
+    --card: 0.99 0.012 80;
+    --card-foreground: 0.22 0.04 45;
+
+    --popover: 0.99 0.012 80;
+    --popover-foreground: 0.22 0.04 45;
+
+    /* Saffron orange primary */
+    --primary: 0.62 0.18 46;
+    --primary-foreground: 0.99 0 0;
+
+    /* Gold secondary */
+    --secondary: 0.94 0.06 75;
+    --secondary-foreground: 0.35 0.08 45;
+
+    --muted: 0.94 0.025 75;
+    --muted-foreground: 0.52 0.05 55;
+
+    /* Deep gold accent */
+    --accent: 0.78 0.14 68;
+    --accent-foreground: 0.22 0.04 45;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.88 0.05 70;
+    --input: 0.88 0.05 70;
+    --ring: 0.62 0.18 46;
+
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+
+    --sidebar: 0.28 0.055 40;
+    --sidebar-foreground: 0.95 0.03 75;
+    --sidebar-primary: 0.78 0.14 68;
+    --sidebar-primary-foreground: 0.22 0.04 45;
+    --sidebar-accent: 0.38 0.07 42;
+    --sidebar-accent-foreground: 0.95 0.03 75;
+    --sidebar-border: 0.38 0.05 42;
+    --sidebar-ring: 0.78 0.14 68;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Figtree", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: "Playfair Display", serif;
+  }
+}
+
+.temple-gradient {
+  background: linear-gradient(
+    135deg,
+    oklch(0.62 0.18 46),
+    oklch(0.72 0.16 60),
+    oklch(0.78 0.14 68)
+  );
+}
+
+.gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    oklch(0.72 0.16 60),
+    oklch(0.82 0.18 72),
+    oklch(0.72 0.16 60)
+  );
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.otp-box {
+  letter-spacing: 0.5rem;
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: oklch(0.62 0.18 46);
+  background: oklch(0.99 0.012 80);
+  border: 2px solid oklch(0.78 0.14 68);
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+}
+
+.admin-gradient {
+  background: linear-gradient(
+    135deg,
+    oklch(0.32 0.09 40),
+    oklch(0.48 0.14 42),
+    oklch(0.62 0.18 46)
+  );
+}
+
+.admin-shield-bg {
+  background: linear-gradient(135deg, oklch(0.32 0.09 40), oklch(0.52 0.15 42));
+}
+
+.admin-bg {
+  background: oklch(0.97 0.018 75);
+  background-image: radial-gradient(
+    ellipse at top,
+    oklch(0.92 0.035 55) 0%,
+    oklch(0.97 0.018 75) 60%
+  );
+}
+
+.admin-otp-box {
+  color: oklch(0.32 0.09 40);
+  border-color: oklch(0.52 0.12 42);
+  background: oklch(0.95 0.025 55);
+}
+
+.shadow-temple-dark {
+  box-shadow: 0 4px 24px oklch(0.32 0.09 40 / 0.18), 0 1px 4px
+    oklch(0.32 0.09 40 / 0.1);
+}
